@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>W3.CSS Template</title>
+    <title>Portfolio</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width",initial scale="0">
@@ -107,7 +107,7 @@
               <a href="images/my_resume[2]kullu.docx" download class="btn btn2">Download resume</a>
             </div>
             <div class="contact-right">
-              <form>
+              <form name="submit-to-google-sheet">
                 <input type="text" name="Name" placeholder="Your Name" required>
                 <input type="email" name="Email" placeholder="Your email" required>
                 <textarea name="Message" rows="6" placeholder="Your message" ></textarea>
@@ -130,7 +130,7 @@
       }
     </script>
 <script>
-  const scriptURL = '<SCRIPT URL>'
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbycB9ky9LmT4JpzObgZMGt6LW9vm31s0JKX8rszY3IU0QFLDfauIiLB3MDgp77L_i7M/exec'
   const form = document.forms['submit-to-google-sheet']
 
   form.addEventListener('submit', e => {
