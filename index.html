@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>W3.CSS Template</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width",initial scale="0">
+    <title>Documnet</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/bda8d3cf6a.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+      <div id="header">
+        <div class="container">
+          <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About-Me</a></li>
+              <li><a href="#services">Experience</a></li>
+              <li><a href="#contact">Contact-Me</a></li>
+            </ul>
+          </nav>
+          <div class:header-text>
+            <p>Web Designer</p>
+            <h1>Hi I'm <span>Hritvik Sharma</span><br>from Chitkara Univeristy</h1>
+          </div>
+        </div>
+      </div>
+      <div id="about">
+        <div class="container">
+          <div class="row">
+            <div class="about-col-1">
+              <img src="images/aboutme.jpg">
+            </div>
+            <div class="about-col-2">
+              <h1 class="subtitle">About Me</h1>
+              <p>
+                I Hritvik Sharma currently pursuing BE CSE 2nd year at Chitkara University.
+                I first started practicing Java since I was 16 and have been passionate about it ever since.
+              I am an aspiring web developer and with my past year of coding, I have polished my skills
+            via many projects and actively participating in Hackathons</p>
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">SKILLS</p>
+              <p class="tab-links" onclick="opentab('experience')">EXPERIENCE</p>
+              <p class="tab-links" onclick="opentab('education')"> EDUCATION</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+              <li><span>HTML CSS JAVASCRIPT</span><br>Web Development</li>
+              <li><span>C++ Python JAVA</span><br>Computer Programming</li>
+              <li><span>AI/ML</span><br>Deep Learning</li>
+              <li><span>SQL</span><br>Database Management</li>
+            </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+              <li><span>2023-CURRENT</span><br>OOPS & Database Management at Chitkara</li>
+              <li><span>2022-2023</span><br>Computer Programming & Web Development at Chitkara</li>
+              <li><span>2016-2022</span><br>JAVA & PHP/MSQL at Our Lady Of The Snows High School</li>
+            </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+              <li><span>2022-2023</span><br>Chitkara University (HP)</li>
+              <li><span>2020-2021</span><br>Ambition Classes(Mohal)</li>
+              <li><span>2005-2016</span><br>Our Lady Of The Snows High School(Kullu)</li>
+            </ul>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="services">
+        <div class="container">
+          <h1 class="subtitle">My Experiences</h1>
+          <div class="services-list">
+            <div>
+              <i class="fa-sharp fa-solid fa-code"></i>
+              <h2>YAMAHA HACKATHON</h2>
+              <p>Last year I had an amazing opportunity to take part in the YAMAHA Hackathon
+                with my friends. Despite being new to coding we together as a team exceeded our expectations.
+                Despite,not being able to complete our app we had an amazing experience together and really outperformed
+                our expectations</p>
+            </div>
+            <div>
+              <i class="fa-sharp fa-solid fa-gears"></i>
+              <h2>TECHGIG HACKATHON</h2>
+              <p>A while back I took part in the Techgig hacathon where I solved 
+                many difficult questions which were done by me and I was also on the 
+                leaderboard for a while.I had qualified to the semi-finals of this hackathon</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="contact-left">
+              <h1 class="subtitle">Contact Me</h1>
+              <p><i class="fa-sharp fa-solid fa-envelope"></i>hritvik1174.be22@chitkarauniveristy.edu.in</p>
+              <p><i class="fa-sharp fa-solid fa-phone-volume"></i>+91 7876591103</p>
+              <div class="social-icons">
+                <a href="https://instagram.com/hritviksharma_25?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/hritvik-sharma-29b1b7275"><i class="fa-brands fa-linkedin"></i></a>
+              </div>
+              <a href="images/my_resume[2]kullu.docx" download class="btn btn2">Download resume</a>
+            </div>
+            <div class="contact-right">
+              <form>
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your email" required>
+                <textarea name="Message" rows="6" placeholder="Your message" ></textarea>
+                <button type="submit" class="btn btn2" >Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script>
+      var tablinks=document.getElementsByClassName("tab-links");
+      var tabcontents=document.getElementsByClassName("tab-contents");
+      function opentab(tabname){
+        for(tablink of tablinks)
+        tablink.classList.remove('active-link');
+        for(tabcontent of tabcontents)
+        tabcontent.classList.remove('active-tab');
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+<script>
+  const scriptURL = '<SCRIPT URL>'
+  const form = document.forms['submit-to-google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
+     </body>
+    </html>
